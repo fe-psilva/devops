@@ -2,7 +2,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
   
-	#Configura VM Ubuntu Bionic e provisiona o Docker
+    #Configura VM Ubuntu Bionic e provisiona o Docker
     config.vm.define "dockerhost" do |dockerhost|
         dockerhost.vm.provider "virtualbox" do |vb|
             vb.memory = 512
@@ -12,6 +12,6 @@ Vagrant.configure("2") do |config|
 
         dockerhost.vm.provision "shell", 
             inline: "apt-get update && apt-get install -y docker.io"
-		end
+	end
 	
 end
